@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<crudelicious.Models.Dishes>
+<div class="text-center">
+    <h1 style="margin: 20px">Welcome to CRUDelicious</h1>
+    <div class="row">
+        <div class="col">
+            <h4>Check out some recent dishes!</h4>
+            <hr>
+        </div>
+        <div class="col">
+            <a href="/new">Add a Dish</a>
+        </div>
+    </div>
+    @foreach(Dishes item in Model)
+        {
+            <div class="row">
+            <p><a href="/@item.Id">@item.Name</a> by @item.Chef</p>
+            </div>
+        }
+</div>
